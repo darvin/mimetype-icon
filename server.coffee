@@ -33,11 +33,9 @@ app.configure 'production', () ->
   app.use express.errorHandler()
 
 
-console.error routes.bucketFile
 
 app.get '/',  routes.home
-app.get "/:icontype", routes.icontype
-app.get "/:id/:key/:bucket*", routes.bucketFile
+app.get "/:icon", routes.icon
 
 app.listen PORT, ()->
   return console.log "Listening on #{PORT}\nPress CTRL-C to stop server."

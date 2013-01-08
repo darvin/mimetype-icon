@@ -1,35 +1,12 @@
 extends layout
 block head
-  title Amazon S3 Proxy
-  script(type='text/javascript')
-    function goTo()
-    {
-        var key = document.forms[0].key.value;
-        var secret = document.forms[0].secret.value;
-        var bucket = document.forms[0].bucket.value;
-        window.location += key +"/" +secret +"/" +bucket +"/"
-        return false;
-    }
+  title MIME Icons
 
 block content
   div.hero-unit
-    h1 Go to Amazon S3 Bucket
-    p
-      form.form-horizontal(action="",method="get",onsubmit="return goTo()")
-        div.control-group
-          label.control-label(for='inputKey') Access Key Id
-          div.controls
-            input#inputKey.span5(type='text',name="key")
-        div.control-group
-          label.control-label(for='inputSecret') Secret Access Key
-          div.controls
-            input#inputSecret.span5(type='text',name="secret")
-        div.control-group
-          label.control-label(for='inputBucket') Bucket Name
-          div.controls
-            input#inputBucket.span5(type='text',name="bucket")
-        div.control-group
-          div.controls
-            button.btn.btn-primary.btn-large(type='submit') Go!
-    p Or just create link manually:
-      pre #{baseUrl}ACCESS_KEY_ID/SECRET_ACCESS_KEY/BUCKET_NAME/
+    h1 MIME Icons
+    p see 
+      a(href="http://darvin.github.com/mimetype-icon/") MIME Icon site  
+      for help or 
+      a(href="https://github.com/darvin/mimetype-icon") view the project  
+      on GitHub

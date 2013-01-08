@@ -6,19 +6,11 @@ lib-cov
 *.out
 *.pid
 *.gz
-<<<<<<< HEAD
- 
 pids
 logs
 results
  
 node_modules
 npm-debug.log
-=======
 
-pids
-logs
-results
-
-npm-debug.log
->>>>>>> 0e1537141c9c1778c84627de4002da399e41c049
+build/

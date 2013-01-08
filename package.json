@@ -1,13 +1,12 @@
 {
-  "name": "heroku-s3-proxy",
+  "name": "mimetype-icon",
   "version": "0.0.1",
-  "description": "Proxies Amazon S3 buckets",
+  "description": "Site that provides mimetype icons for hotlinking",
   "main": "server.coffee",
   "dependencies": {
     "express": "*",
     "coffee-script": ">= 1.4.x",
-    "jade": "*",
-    "knox": "*"
+    "jade": "*"
   },
   "devDependencies": {},
   "scripts": {
@@ -15,12 +14,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:darvin/heroku-s3-proxy.git"
+    "url": "git@github.com:darvin/mimetype-icon.git"
   },
   "keywords": [
     "heroku",
-    "amazon",
-    "s3"
+    "mime",
+    "icons"
   ],
   "author": "Sergey Klimov <sergey.v.klimov@gmail.com>",
   "license": "MIT",
