@@ -1,5 +1,4 @@
-mimetype-icon
-=============
+# MIME Icon
 
 Site that provides mimetype icons for hotlinking
 
@@ -14,7 +13,7 @@ You can also use the ![?size=16][?size=16] [?size=16][?size=16] to get a consist
 
 ## Credits
 
-Thanks [Faenza Icon Set](https://code.google.com/p/faenza-icon-theme/) team for the gorgeous icon set!
+Thanks to [Faenza Icon Set](https://code.google.com/p/faenza-icon-theme/) team for the gorgeous icon set!
 
 Thanks to [Paul Tarjan](http://paulisageek.com/) and [Jeff Lindsay](http://progrium.com/) for idea of [stdicon](http://www.stdicon.com/)
 
