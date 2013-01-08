@@ -19,8 +19,8 @@ Thanks [Faenza Icon Set](https://code.google.com/p/faenza-icon-theme/) team for 
 Thanks to [Paul Tarjan](http://paulisageek.com/) and [Jeff Lindsay](http://progrium.com/) for idea of [stdicon](http://www.stdicon.com/)
 
 
-[/movie.avi]: http://www.stdicon.com/movie.avi?size=16
-[/html]: http://www.stdicon.com/html?size=16
-[/application/pdf]: http://www.stdicon.com/application/pdf?size=16
-[?size=16]: http://www.stdicon.com/html?size=16
-[?default=...]: http://www.stdicon.com/404.icon?size=16&default=html
+[/movie.avi]: http://mimeicon.herokuapp.com/movie.avi?size=16
+[/html]: http://mimeicon.herokuapp.com/html?size=16
+[/application/pdf]: http://mimeicon.herokuapp.com/application/pdf?size=16
+[?size=16]: http://mimeicon.herokuapp.com/html?size=16
+[?default=...]: http://mimeicon.herokuapp.com/404.icon?size=16&default=html
