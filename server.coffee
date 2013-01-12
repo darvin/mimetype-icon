@@ -31,6 +31,7 @@ app.configure 'production', () ->
 
 app.get '/',  routes.home
 app.get "/:icon", routes.icon
+routes.initialize()
 
 app.routes.get[1].regexp = /^\/(?:(.+?))\/?$/i
 

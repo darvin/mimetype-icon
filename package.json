@@ -6,8 +6,8 @@
   "dependencies": {
     "express": "*",
     "coffee-script": ">= 1.4.x",
-    "jade": "*",
-    "mime": "*"
+    "mime": "*",
+    "request": "*"
   },
   "devDependencies": {},
   "scripts": {
