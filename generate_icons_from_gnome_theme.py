@@ -48,6 +48,7 @@ def _safe_mkdir(dirname):
 
 
 def _copy_icons(path, size, destination, only_basenames=None, convert_from_svg=True):
+    names =[]
     for filename in os.listdir(path):
         file = os.path.join(path, filename)
         fullfilename = os.path.abspath(file)
@@ -61,7 +62,9 @@ def _copy_icons(path, size, destination, only_basenames=None, convert_from_svg=T
                     if convert_from_svg:
                         subprocess.call(["/usr/bin/java","-jar",
                                      BATIK_JAR_PATH, fullfilename,
-                                     "-m","image/png","-w",str(size), "-h", str(size)])
+                                     "-m","image/png","-w",str(size), "-h", str(size),
+                                     #"-Djava.awt.headless=true",
+                                    ])
                     ext = ".png"
                     file = file.replace(".svg", ".png") #fixme
 
@@ -72,8 +75,9 @@ def _copy_icons(path, size, destination, only_basenames=None, convert_from_svg=T
                 new_filename = RESULT_FILENAME_FORMAT.format(size=size, basename=new_basename, extension=ext)
                 new_file_path = os.path.join(destination, new_filename)
                 shutil.copyfile(file, new_file_path)
+                names.append(new_basename)
                 print "{oldfile} -> {newfile}".format(oldfile=file, newfile=new_file_path)
-
+    return set(names)
 
 def _get_paths_from_config_for_context(config, directories, source_path, context, sizes=(40,80)):
 
@@ -123,23 +127,25 @@ def generate_icons_from_gnome_theme(source, destination, list_format="plist", si
         "ThemeComment": config.get("Icon Theme", "Comment"),
         "Sizes":list(actual_sizes),
         "FilenameFormat":RESULT_FILENAME_FORMAT
+    },
+        "Names":[]
     }
-    }
-
+    names = set()
     destination_icons = os.path.join(destination, "Icons")
     _safe_mkdir(destination_icons)
 
     for size, path in paths_by_sizes.items():
         _find_symlinks_in_path(path, plist)
-        _copy_icons(path=path, size=size, destination=destination_icons, convert_from_svg=convert_from_svg)
+        names |= _copy_icons(path=path, size=size, destination=destination_icons, convert_from_svg=convert_from_svg)
 
     for size, path in places_paths_by_sizes.items():
         if size in actual_sizes:
-            _copy_icons(path=path, size=size, destination=destination_icons, only_basenames={
+            names |= _copy_icons(path=path, size=size, destination=destination_icons, only_basenames={
                 "folder":"text-directory",
                 "folder-documents":"text-directory-documents",
             }, convert_from_svg=convert_from_svg)
 
+    plist["Names"] = list(names)
     if list_format=="plist":
         plist_filename = os.path.join(destination, "FileTypeIcons.plist")
         plistlib.writePlist(plist, plist_filename)

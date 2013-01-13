@@ -3,8 +3,8 @@
 FAENZA_URL="https://faenza-icon-theme.googlecode.com/files/faenza-icon-theme_1.3.zip"
 BATIK_URL="http://www.gtlib.gatech.edu/pub/apache/xmlgraphics/batik/batik-1.7.zip"
 mkdir ./build
-#curl $FAENZA_URL > ./build/faenza.zip
-#curl $BATIK_URL > ./build/batik.zip
+curl $FAENZA_URL > ./build/faenza.zip
+curl $BATIK_URL > ./build/batik.zip
 
 unzip ./build/batik.zip -d ./build/batik
 export BATIK_RASTERIZER_PATH=./build/batik/batik-1.7/batik-rasterizer.jar
