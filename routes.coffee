@@ -29,15 +29,18 @@ module.exports =
     mime.default_type = mime.lookup defaultMime
     mimetype = mime.lookup icon
     console.error "#{mimetype}, size: #{size}"
-    if mimetype.replace "/", "-" not in ICONS_MANIFEST.Names
-      console.error "Not found: #{mimetype}"
+    iconname = mimetype.replace "/", "-"
+    if iconname not in ICONS_MANIFEST.Names
+      console.error "Not found: #{iconname}"
       mimetype = mime.default_type
     if size not in ICONS_MANIFEST.Info.Sizes
       size = ICONS_MANIFEST.Info.Sizes.reduce (i1, i2) ->
         s1 = parseInt(i1)
         s2 = parseInt(i2)
         if s1>s2 and s1<size then s1 else s2
-    iconUrl = "#{BASE_ICONS_URL}#{size}_#{mimetype.replace "/", "-"}.png"
+    
+    iconname = mimetype.replace "/", "-"
+    iconUrl = "#{BASE_ICONS_URL}#{size}_#{iconname}.png"
     #res.send [mimetype, size, iconUrl]
     res.redirect iconUrl
 
