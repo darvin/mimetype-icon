@@ -37,10 +37,8 @@ module.exports =
       iconname = "text-directory"
     else
       mimetype = mime.lookup icon
-      console.error "#{mimetype}, size: #{size}"
       iconname = mimetype.replace "/", "-"
       if iconname not in ICONS_MANIFEST.Names
-        console.error "Not found: #{iconname}"
         mimetype = mime.default_type
       
       iconname = mimetype.replace "/", "-"
