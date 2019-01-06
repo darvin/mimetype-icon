@@ -1,9 +1,9 @@
 request = require 'request'
 
-SITE_HOME = "http://darvin.github.com/mimetype-icon/"
-BASE_ICONS_URL = "http://darvin.github.com/mimetype-icon/Icons/Icons/"
+SITE_HOME = "https://darvin.github.com/mimetype-icon/"
+BASE_ICONS_URL = "https://darvin.github.com/mimetype-icon/Icons/Icons/"
 ICONS_MANIFEST_URL = \
-  "http://darvin.github.com/mimetype-icon/Icons/FileTypeIcons.json"
+  "https://darvin.github.com/mimetype-icon/Icons/FileTypeIcons.json"
 DIRECTORY_ICON_NAMES = [
   "directory",
   "dir",
